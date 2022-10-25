@@ -11,11 +11,39 @@ public class Incidencia {
     private Boolean validaIncidencia;
     private String Descripcion;
     private Integer contador_reabierto;
-    private Integer idTipoIncidencia;
-    private Integer idNivelUrgencia;
-    private Integer EstadoIncidencia;
-    private Integer Usuarios_codigo;
+    private String TipoIncidencia;// mostratr tipo
+    private String NivelUrgencia;// mostratr tipo
 
+
+    private String Usuarios_nombre_completo;
+
+    private String nombreEstado;
+
+    private Integer contadorDestacado;
+
+    public String getNombreEstado() {
+        return nombreEstado;
+    }
+
+    public void setNombreEstado(String nombreEstado) {
+        this.nombreEstado = nombreEstado;
+    }
+
+    public Integer getContadorDestacado() {
+        return contadorDestacado;
+    }
+
+    public void setContadorDestacado(Integer contadorDestacado) {
+        this.contadorDestacado = contadorDestacado;
+    }
+
+    public String getUsuarios_nombre_completo() {
+        return Usuarios_nombre_completo;
+    }
+
+    public void setUsuarios_nombre_completo(String usuarios_nombre_completo) {
+        Usuarios_nombre_completo = usuarios_nombre_completo;
+    }
 
     public Integer getIdIncidencia() {
         return idIncidencia;
@@ -89,35 +117,23 @@ public class Incidencia {
         this.contador_reabierto = contador_reabierto;
     }
 
-    public Integer getIdTipoIncidencia() {
-        return idTipoIncidencia;
+    public String getTipoIncidencia() {
+        return TipoIncidencia;
     }
 
-    public void setIdTipoIncidencia(Integer idTipoIncidencia) {
-        this.idTipoIncidencia = idTipoIncidencia;
+    public void setTipoIncidencia(String tipoIncidencia) {
+        TipoIncidencia = tipoIncidencia;
     }
 
-    public Integer getIdNivelUrgencia() {
-        return idNivelUrgencia;
+    public String getNivelUrgencia() {
+        return NivelUrgencia;
     }
 
-    public void setIdNivelUrgencia(Integer idNivelUrgencia) {
-        this.idNivelUrgencia = idNivelUrgencia;
+    public void setNivelUrgencia(String nivelUrgencia) {
+        NivelUrgencia = nivelUrgencia;
     }
 
-    public Integer getEstadoIncidencia() {
-        return EstadoIncidencia;
-    }
 
-    public void setEstadoIncidencia(Integer estadoIncidencia) {
-        EstadoIncidencia = estadoIncidencia;
-    }
 
-    public Integer getUsuarios_codigo() {
-        return Usuarios_codigo;
-    }
 
-    public void setUsuarios_codigo(Integer usuarios_codigo) {
-        Usuarios_codigo = usuarios_codigo;
-    }
 }
