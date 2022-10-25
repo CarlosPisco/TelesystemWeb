@@ -92,7 +92,9 @@
                         Se actualizó el estado de la incidencia
                     </div>
                     <div class="modal-footer">
+                        <form action="<%=request.getContextPath()%>/ReInciServlet?accion=listar">
                         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresar a la ventana principal</button>
+                        </form>
                     </div>
                 </div>
             </div>

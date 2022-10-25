@@ -71,12 +71,13 @@ public class UsuarioReInciDao {
         String sql = "select i.fecha,i.zonaPUCP, e.estado,\n" +
                 "\t\tnu.nivel, i.descripcion,\n" +
                 "  i.nombreIncidencia,concat(u.nombre,\" \",u.apellido) as Usuario, \n" +
-                " e.estado, i.contadorreabierto, d.contadorDestacado \n" +
+                " e.estado, i.contadorreabierto, d.contadorDestacado, ti.tipo \n" +
                 " from incidencia i \n" +
                 "inner join usuarios u on i.codigousuario = u.codigo\n" +
                 "inner join estadoincidencia e on i.idEstadoIncidencia = e.idEstadoIncidencia\n" +
                 "inner join incidenciasdestacadas d on i.idIncidencia = d.idIncidencia\n" +
                 "inner join nivelUrgencia nu on nu.IdNivelUrgencia = i.IdNivelUrgencia\n" +
+                "inner join tipoIncidencia ti on ti.idTipoIncidencia = i.idTipoIncidencia \n"+
                 "WHERE i.idIncidencia = ?";
         Incidencia incidencia = null;
         try(Connection conn = DriverManager.getConnection(url, user, pass);
@@ -97,6 +98,7 @@ public class UsuarioReInciDao {
                 incidencia.setContadorDestacado(rs.getInt(10));
                 incidencia.setNivelUrgencia(rs.getString(4));
                 incidencia.setNombreEstado(rs.getString(3));
+                incidencia.setTipoIncidencia(rs.getString("tipo"));
                 //usuario.setCodigo(rs.getString(13));
                 //incidencia.setUsuario(usuario);
             }
